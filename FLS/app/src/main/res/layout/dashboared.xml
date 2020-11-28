@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Dashboared">
+
+    <Button
+        android:id="@+id/signout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Signout"
+        app:layout_constraintBottom_toTopOf="@+id/writedata"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.836"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.301" />
+
+    <EditText
+        android:id="@+id/writedata"
+        android:layout_width="257dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="260dp"
+        android:ems="10"
+        android:hint="Your Data"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/insert_data"
+        android:layout_width="258dp"
+        android:layout_height="44dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/writedata"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/writedata"
+        app:layout_constraintTop_toBottomOf="@+id/writedata"
+        app:layout_constraintVertical_bias="0.075" />
+
+    <TextView
+        android:id="@+id/View_Data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/insert_data"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/insert_data"
+        app:layout_constraintTop_toBottomOf="@+id/insert_data" />
+
+    <Button
+        android:id="@+id/ShowData"
+        android:layout_width="107dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="76dp"
+        android:text="Show "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/View_Data"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/View_Data" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,7 +7,6 @@
     tools:context=".Login"
     android:background="@drawable/loginpannel">
 
-
     <EditText
         android:id="@+id/loginUsername"
         android:layout_width="wrap_content"

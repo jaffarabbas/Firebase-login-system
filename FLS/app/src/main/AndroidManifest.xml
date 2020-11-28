@@ -9,14 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Firebase_Login_System">
-        <activity android:name=".Login"></activity>
-        <activity android:name=".Regiester" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Dashboared">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".Login" />
+        <activity android:name=".Regiester" />
+        <activity android:name=".MainActivity">
+
         </activity>
     </application>
 
