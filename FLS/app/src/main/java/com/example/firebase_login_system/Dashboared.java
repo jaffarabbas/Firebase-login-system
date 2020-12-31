@@ -25,6 +25,7 @@ public class Dashboared extends AppCompatActivity {
     Button btnsignout,insert,view;
     EditText takedata;
     TextView view_message;
+    //Tag for Success value listener and failed value listener
     public static final String TAG = "MyTag";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,22 +38,25 @@ public class Dashboared extends AppCompatActivity {
         view = findViewById(R.id.ShowData);
         view_message = findViewById(R.id.View_Data);
 
+        //custom push id
+        String key = CustomPushId(10);
         //InsertData
         this.insert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String data = takedata.getText().toString();
+                String key_for_push = FirebaseDatabase.getInstance().getReference().push().getKey();
                 //toast message for successfully insertion
                 Toast.makeText(Dashboared.this,"Successfully Inserted",Toast.LENGTH_LONG).show();
                 //firebase
-                FirebaseDatabase.getInstance().getReference(getAlphaNumericString(10)).setValue(data);
+                FirebaseDatabase.getInstance().getReference().child(key_for_push).child("Name: ").setValue(data);
             }
         });
         //View Data
         this.view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FirebaseDatabase.getInstance().getReference(getAlphaNumericString(10)).addValueEventListener(new ValueEventListener() {
+                FirebaseDatabase.getInstance().getReference().addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         String data = snapshot.getValue(String.class);
@@ -76,7 +80,8 @@ public class Dashboared extends AppCompatActivity {
         });
     }
 
-    public String getAlphaNumericString(int n)
+    //Custom string maker for push id
+    public String CustomPushId(int n)
     {
         // chose a Character random from this String
         String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "0123456789" + "abcdefghijklmnopqrstuvxyz";
